@@ -6,8 +6,10 @@ import BorrowerDashboard from './pages/BorrowerDashboard';
 import AdminDashboard from './pages/AdminDashboard'; 
 
 function App() {
+  const currentBasename = window.location.hostname.includes('github.io') ? '/fcams-web' : '/';
+
   return (
- <Router basename="/fcams-web">
+    <Router basename={currentBasename}>
       <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
